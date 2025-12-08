@@ -30,7 +30,7 @@ public class DBController {
 	 * @throws ClassNotFoundException ドライバクラスが不在の場合に送出
 	 * @throws SQLException           DB処理でエラーが発生した場合に送出
 	 */
-	public static void find() throws ClassNotFoundException, SQLException {
+	public static void findAllEmployees() throws ClassNotFoundException, SQLException {
 		Connection connection = null;
 		PreparedStatement preparedStatement = null;
 		ResultSet resultSet = null;
@@ -93,7 +93,7 @@ public class DBController {
 	 * @throws SQLException           DB処理でエラーが発生した場合に送出
 	 * @throws IOException            入力処理でエラーが発生した場合に送出
 	 */
-	public static void findB() throws ClassNotFoundException, SQLException, IOException {
+	public static void findEmployeeByName() throws ClassNotFoundException, SQLException, IOException {
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 
 		// 検索ワード
@@ -173,7 +173,7 @@ public class DBController {
 	 * @throws SQLException           DB処理でエラーが発生した場合に送出
 	 * @throws IOException            入力処理でエラーが発生した場合に送出
 	 */
-	public static void findC(String deptId) throws ClassNotFoundException, SQLException, IOException {
+	public static void findEmployeeById(String deptId) throws ClassNotFoundException, SQLException, IOException {
 
 		Connection connection = null;
 		PreparedStatement preparedStatement = null;
@@ -253,7 +253,7 @@ public class DBController {
 
 	/**
 	 * 社員情報を1件登録
-	 * 
+	 *
 	 * @param empName 社員名
 	 * @param gender 性別
 	 * @param birthday 生年月日
@@ -261,9 +261,9 @@ public class DBController {
 	 * @throws ClassNotFoundException ドライバクラスが不在の場合に送出
 	 * @throws SQLException            DB処理でエラーが発生した場合に送出
 	 * @throws IOException             入力処理でエラーが発生した場合に送出
-	 * @throws ParseException 
+	 * @throws ParseException
 	 */
-	public static void insert(String empName, String gender, String birthday, String deptId)
+	public static void registerEmployee(String empName, String gender, String birthday, String deptId)
 			throws ClassNotFoundException, SQLException, IOException, ParseException {
 		Connection connection = null;
 		PreparedStatement preparedStatement = null;
@@ -294,14 +294,14 @@ public class DBController {
 
 	/**
 	 * 社員情報を1件更新
-	 * 
+	 *
 	 * @param empId 社員ID
 	 * @throws ClassNotFoundException ドライバクラスが不在の場合に送出
 	 * @throws SQLException            DB処理でエラーが発生した場合に送出
 	 * @throws IOException             入力処理でエラーが発生した場合に送出
-	 * @throws ParseException 
+	 * @throws ParseException
 	 */
-	public static void update(String empId)
+	public static void updateEmployee(String empId)
 			throws ClassNotFoundException, SQLException, IOException, ParseException {
 		Connection connection = null;
 		PreparedStatement preparedStatement = null;
@@ -353,7 +353,7 @@ public class DBController {
 	 * @throws SQLException           DB処理でエラーが発生した場合に送出
 	 * @throws IOException            入力処理でエラーが発生した場合に送出
 	 */
-	public static void delete() {
+	public static void deleteEmployee() {
 		Connection connection = null;
 		PreparedStatement preparedStatement = null;
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
