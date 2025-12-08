@@ -229,12 +229,12 @@ public class DBController {
 				System.out.print("\t");
 
 				String deptIdString = resultSet.getString("dept_id");
-				int deptId2 = Integer.parseInt(deptIdString);
-				if (deptId2 == 1) {
+				int currentDeptId = Integer.parseInt(deptIdString);
+				if (currentDeptId == 1) {
 					System.out.println("営業部");
-				} else if (deptId2 == 2) {
+				} else if (currentDeptId == 2) {
 					System.out.println("経理部");
-				} else if (gender == 3) {
+				} else if (currentDeptId == 3) {
 					System.out.println("総務部");
 
 				}
@@ -277,8 +277,8 @@ public class DBController {
 			// 入力値をバインド
 			preparedStatement.setString(1, empName);
 			preparedStatement.setInt(2, Integer.parseInt(gender));
-			SimpleDateFormat sdf = new SimpleDateFormat("yyyy/MM/dd");
-			preparedStatement.setObject(3, sdf.parse(birthday), Types.DATE);
+			SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd");
+			preparedStatement.setObject(3, dateFormat.parse(birthday), Types.DATE);
 			preparedStatement.setInt(4, Integer.parseInt(deptId));
 
 			// SQL文を実行
@@ -330,8 +330,8 @@ public class DBController {
 			// 入力値をバインド
 			preparedStatement.setString(1, emp_name);
 			preparedStatement.setInt(2, Integer.parseInt(gender));
-			SimpleDateFormat sdf = new SimpleDateFormat("yyyy/MM/dd");
-			preparedStatement.setObject(3, sdf.parse(birthday), Types.DATE);
+			SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd");
+			preparedStatement.setObject(3, dateFormat.parse(birthday), Types.DATE);
 			preparedStatement.setInt(4, Integer.parseInt(deptId));
 			preparedStatement.setInt(5, Integer.parseInt(empId));
 
