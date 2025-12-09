@@ -50,4 +50,30 @@ public class ConstantMsg {
 
 	/** システム終了メッセージ */
 	public static final String MSG_SYSTEM_EXIT = "システムを終了します。";
+
+	
+	
+	// ***** 全件検索 *****
+	/** 該当者なしメッセージ */
+    public static final String MSG_NO_RESULT = "該当者はいませんでした";
+    
+    /** 全件表示ヘッダー */
+    public static final String MSG_HEADER_ALL_EMP = "社員ID\t社員名\t性別\t生年月日\t部署名";
+    
+    /** 性別：回答なし (0) */
+    public static final String GENDER_DISPLAY_NOT_ANSWER = "回答なし";
+    
+    /** 性別：男性 (1) */
+    public static final String GENDER_DISPLAY_MALE = "男性";
+    
+    /** 性別：女性 (2) */
+    public static final String GENDER_DISPLAY_FEMALE = "女性";
+    
+    /** 性別：その他 (9) */
+    public static final String GENDER_DISPLAY_OTHER = "その他";
+    
+    /** 空行 */
+    public static final String MSG_EMPTY_LINE = "";
+	
+	
 }

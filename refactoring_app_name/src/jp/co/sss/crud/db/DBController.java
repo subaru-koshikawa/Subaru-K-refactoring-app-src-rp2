@@ -11,7 +11,9 @@ import java.sql.Types;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 
+import jp.co.sss.crud.util.ConstantMsg;
 import jp.co.sss.crud.util.ConstantSQL;
+import jp.co.sss.crud.util.ConstantValue;
 
 /**
  * DB操作処理用のクラス
@@ -45,29 +47,29 @@ public class DBController {
 			// SQL文を実行
 			resultSet = preparedStatement.executeQuery();
 
-			//resultSetの結果Setがない場合はfalse
+			// resultSetの結果Setがない場合はfalse
 			if (!resultSet.isBeforeFirst()) {
-				System.out.println("該当者はいませんでした");
+				System.out.println(ConstantMsg.MSG_NO_RESULT);
 				return;
 			}
 
 			// レコードを出力
-			System.out.println("社員ID\t社員名\t性別\t生年月日\t部署名");
+			System.out.println(ConstantMsg.MSG_HEADER_ALL_EMP);
 			while (resultSet.next()) {
 				System.out.print(resultSet.getString("emp_id") + "\t");
 				System.out.print(resultSet.getString("emp_name") + "\t");
 
 				int gender = Integer.parseInt(resultSet.getString("gender"));
-				if (gender == 0) {
-					System.out.print("回答なし" + "\t");
-				} else if (gender == 1) {
-					System.out.print("男性" + "\t");
+				if (gender == ConstantValue.GENDER_CODE_NOT_ANSWER) {
+					System.out.print(ConstantMsg.GENDER_DISPLAY_NOT_ANSWER + "\t");
+				} else if (gender == ConstantValue.GENDER_CODE_MALE) {
+					System.out.print(ConstantMsg.GENDER_DISPLAY_MALE + "\t");
 
-				} else if (gender == 2) {
-					System.out.print("女性" + "\t");
+				} else if (gender == ConstantValue.GENDER_CODE_FEMALE) {
+					System.out.print(ConstantMsg.GENDER_DISPLAY_FEMALE + "\t");
 
-				} else if (gender == 9) {
-					System.out.print("その他" + "\t");
+				} else if (gender == ConstantValue.GENDER_CODE_OTHER) {
+					System.out.print(ConstantMsg.GENDER_DISPLAY_OTHER + "\t");
 
 				}
 
@@ -75,7 +77,7 @@ public class DBController {
 				System.out.println(resultSet.getString("dept_name"));
 			}
 
-			System.out.println("");
+			System.out.println(ConstantMsg.MSG_EMPTY_LINE);
 		} finally {
 			// ResultSetをクローズ
 			DBManager.close(resultSet);
@@ -124,7 +126,7 @@ public class DBController {
 				return;
 			}
 
-			System.out.println("社員ID\t社員名\t性別\t生年月日\t部署名");
+			System.out.println(ConstantMsg.MSG_HEADER_ALL_EMP);
 			while (resultSet.next()) {
 				System.out.print(resultSet.getString("emp_id"));
 				System.out.print("\t");
@@ -254,13 +256,13 @@ public class DBController {
 	/**
 	 * 社員情報を1件登録
 	 *
-	 * @param empName 社員名
-	 * @param gender 性別
+	 * @param empName  社員名
+	 * @param gender   性別
 	 * @param birthday 生年月日
-	 * @param deptId 部署ID
+	 * @param deptId   部署ID
 	 * @throws ClassNotFoundException ドライバクラスが不在の場合に送出
-	 * @throws SQLException            DB処理でエラーが発生した場合に送出
-	 * @throws IOException             入力処理でエラーが発生した場合に送出
+	 * @throws SQLException           DB処理でエラーが発生した場合に送出
+	 * @throws IOException            入力処理でエラーが発生した場合に送出
 	 * @throws ParseException
 	 */
 	public static void registerEmployee(String empName, String gender, String birthday, String deptId)
@@ -297,8 +299,8 @@ public class DBController {
 	 *
 	 * @param empId 社員ID
 	 * @throws ClassNotFoundException ドライバクラスが不在の場合に送出
-	 * @throws SQLException            DB処理でエラーが発生した場合に送出
-	 * @throws IOException             入力処理でエラーが発生した場合に送出
+	 * @throws SQLException           DB処理でエラーが発生した場合に送出
+	 * @throws IOException            入力処理でエラーが発生した場合に送出
 	 * @throws ParseException
 	 */
 	public static void updateEmployee(String empId)
