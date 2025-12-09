@@ -54,7 +54,7 @@ public class MainSystem {
 
 			case 2:
 				// 社員名検索
-				System.out.print("社員名:");
+				System.out.print("検索する社員名を入力してください:");
 
 				// 検索機能の呼出
 				DBController.findEmployeeByName();
@@ -63,25 +63,27 @@ public class MainSystem {
 			case 3:
 				// 検索する部署IDを入力
 				System.out.print("部署ID(1:営業部、2:経理部、3:総務部)を入力してください:");
-				String deptIdA = br.readLine();
+				String searchDeptId = br.readLine();
 
 				// 検索機能の呼出
-				DBController.findEmployeeById(deptIdA);
+				DBController.findEmployeeById(searchDeptId);
 				break;
 
 			case 4:
 				// 登録する値を入力
 				System.out.print("社員名:");
-				String emp_name = br.readLine();
+				String empName = br.readLine();
 				System.out.print("性別(0:その他, 1:男性, 2:女性, 9:回答なし):");
-				String Seibetsu = br.readLine();
+				String gender = br.readLine();
 				System.out.print("生年月日(西暦年/月/日):");
 				String birthday = br.readLine();
 				System.out.print("部署ID(1:営業部、2:経理部、3:総務部):");
-				String deptIdB = br.readLine();
+				//↓変える必要あり？Bを消した
+				String deptId = br.readLine();
 
 				// 登録機能の呼出
-				DBController.registerEmployee(emp_name, Seibetsu, birthday, deptIdB);
+				//どこの変数に繋がるのか
+				DBController.registerEmployee(empName, gender, birthday, deptId);
 				break;
 
 			case 5:
@@ -89,11 +91,11 @@ public class MainSystem {
 				System.out.print("更新する社員の社員IDを入力してください：");
 
 				// 更新する値を入力する
-				String empId_1 = br.readLine();
-				Integer.parseInt(empId_1);
+				String EmpIdToUpdate = br.readLine();
+				Integer.parseInt(EmpIdToUpdate);
 
 				// 更新機能の呼出
-				DBController.updateEmployee(empId_1);
+				DBController.updateEmployee(EmpIdToUpdate);
 				System.out.println("社員情報を更新しました");
 
 				break;
