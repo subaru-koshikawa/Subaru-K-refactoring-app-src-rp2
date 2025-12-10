@@ -22,8 +22,7 @@ public class ConstantValue {
 	/** メニュー番号：終了 (7) */
 	public static final int MENU_NO_EXIT = 7;
 
-	
-// *****全件検索のgenderの定数化****** 
+// *****全件検索のgenderの定数化******
 	public static final int GENDER_CODE_NOT_ANSWER = 0;
 
 	/** 性別コード：男性 (1) */
@@ -33,5 +32,22 @@ public class ConstantValue {
 	public static final int GENDER_CODE_FEMALE = 2;
 
 	/** 性別コード：その他 (9) */
-	public static final int GENDER_CODE_OTHER = 9; 
+	public static final int GENDER_CODE_OTHER = 9;
+
+	/** 部署IDコード：営業部 (1) */
+	public static final int DEPT_CODE_SALES = 1;
+	/** 部署IDコード：経理部 (2) */
+	public static final int DEPT_CODE_ACCOUNTING = 2;
+	/** 部署IDコード：総務部 (3) */
+	public static final int DEPT_CODE_GENERAL_AFFAIRS = 3;
+
+	public static final String DATE_FORMAT_PATTERN = "yyyy/MM/dd";
+
+	public static final int MENU_SELECT_ALL = 1;
+	public static final int MENU_SEARCH_EMP_NAME = 2;
+	public static final int MENU_SEARCH_DEPT_ID = 3;
+	public static final int MENU_INSERT = 4;
+	public static final int MENU_UPDATE = 5;
+	public static final int MENU_DELETE = 6;
+
 }

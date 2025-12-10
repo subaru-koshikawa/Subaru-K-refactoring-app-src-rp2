@@ -36,18 +36,38 @@ public class ConstantMsg {
     /** 部署ID入力プロンプト  */
     public static final String MSG_PROMPT_INSERT_DEPT_ID = "部署ID(1:営業部、2:経理部、3:総務部):";
 
+    /** 登録完了メッセージ */
+    public static final String MSG_INSERT_COMPLETE = "社員情報を登録しました";
 
  // ***** 更新（UPDATE）関連のプロンプト *****
 	/** 更新対象ID入力プロンプト */
 	public static final String MSG_PROMPT_UPDATE_ID = "更新する社員の社員IDを入力してください：";
+	
+	/** 社員名入力プロンプト */
+    public static final String MSG_PROMPT_UPDATE_EMP_NAME = "社員名:";
 
+    /** 性別入力プロンプト  */
+    public static final String MSG_PROMPT_UPDATE_GENDER = "性別(0:その他, 1:男性, 2:女性, 9:回答なし):";
+
+    /** 生年月日入力プロンプト */
+    public static final String MSG_PROMPT_UPDATE_BIRTHDAY = "生年月日(西暦年/月/日):";
+
+    /** 部署ID入力プロンプト  */
+    public static final String MSG_PROMPT_UPDATE_DEPT_ID = "部署ID(1:営業部、2:経理部、3:総務部):";
+
+	
 	/** 更新完了メッセージ */
 	public static final String MSG_UPDATE_COMPLETE = "社員情報を更新しました";
 
-
+	// ***** 削除（DELETE）関連のプロンプト *****
 	/** 削除対象ID入力プロンプト */
 	public static final String MSG_PROMPT_DELETE_ID = "削除する社員の社員IDを入力してください：";
 
+	/** 削除完了メッセージ */
+	public static final String MSG_PROMPT_DELETE_COMPLETE = "社員情報を削除しました";
+	
+	
+	
 	/** システム終了メッセージ */
 	public static final String MSG_SYSTEM_EXIT = "システムを終了します。";
 
@@ -74,6 +94,19 @@ public class ConstantMsg {
     
     /** 空行 */
     public static final String MSG_EMPTY_LINE = "";
+    
 	
+// *****　部署名表示メッセージ *****
+    
+    /** 部署名：営業部 (1) */
+    public static final String DEPT_DISPLAY_SALES = "営業部";
+    
+    /** 部署名：経理部 (2) */
+    public static final String DEPT_DISPLAY_ACCOUNTING = "経理部";
+    
+    /** 部署名：総務部 (3) */
+    public static final String DEPT_DISPLAY_GENERAL_AFFAIRS = "総務部";
+    
+  
 	
 }
